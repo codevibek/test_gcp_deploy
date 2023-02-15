@@ -1,7 +1,7 @@
 steps:
-- name: gcr.io/cloud-buiders/docker
+- name: gcr.io/test-project-for-gcp-377105/node_app:v1
   args: ["build", "-t", "gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}","."]
-- name: gcr.io/cloud-buiders/docker
+- name: gcr.io/test-project-for-gcp-377105/node_app:v1
   args: ["push", "gcr.io/$PROJECT_ID/${_SERVICE_NAME}"]
-- name: gcr.io/cloud-buiders/docker
+- name: gcr.io/test-project-for-gcp-377105/node_app:v1
   args: ["run","deploy","${_SERVICE_NAME}","--image","gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}","--region","us-central1","--platform","managed","--allow-unauthenticated"]
